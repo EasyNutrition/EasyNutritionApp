@@ -101,6 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                             splashColor: Colors.redAccent,
                             icon: Icon( // <-- Icon
                               Icons.account_circle_sharp,
+                              color: Colors.redAccent,
                               size: 24.0,
                             ),
                             onPressed: () {
