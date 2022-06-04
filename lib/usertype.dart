@@ -1,4 +1,5 @@
 import 'package:easy_nutrition/register.dart';
+import 'package:easy_nutrition/signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -90,7 +91,9 @@ class UserType extends StatelessWidget {
                       label: Text('Nutricionista'),
                       backgroundColor: Colors.green,
                       splashColor: Colors.greenAccent,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()));
+                      },
 
                     ),
 
