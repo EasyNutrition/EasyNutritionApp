@@ -72,8 +72,8 @@ class _PatientRegisterState extends State<PatientRegister> {
             ),
             FloatingActionButton.extended(
               label: Text('Siguiente'),
-              backgroundColor: Colors.greenAccent,
-              splashColor: Colors.white,
+              backgroundColor: Colors.green,
+              splashColor: Colors.greenAccent,
               onPressed: () {
                 Navigator.push(
                     context,

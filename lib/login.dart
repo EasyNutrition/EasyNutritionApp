@@ -1,4 +1,5 @@
 import 'package:easy_nutrition/home_page.dart';
+import 'package:easy_nutrition/view_booking_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.only(top: 30),
               ),
               Text(
-                'Inicia sesión',
+                'Inicia Sesión',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 35.0,
@@ -81,7 +82,8 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           FloatingActionButton.extended(
                             label: Text('Ingresar'), // <-- Text
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Colors.white,
+                            splashColor: Colors.green,
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -92,6 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                           ),
+
                           FloatingActionButton.extended(
                             label: Text('Continuar con Google'),
                             backgroundColor: Colors.white,
@@ -109,6 +112,8 @@ class _LoginPageState extends State<LoginPage> {
                             },
 
                           ),
+
+
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                           ),
@@ -128,6 +133,8 @@ class _LoginPageState extends State<LoginPage> {
                             },
 
                           ),
+
+
 
                         ],
                       ),

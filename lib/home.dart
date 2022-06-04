@@ -47,8 +47,8 @@ class _HomePageState extends State<Home> {
               ),
               FloatingActionButton.extended(
                 label: Text('Empezar'),
-                backgroundColor: Colors.greenAccent,
-                splashColor: Colors.white,
+                backgroundColor: Colors.green,
+                splashColor: Colors.greenAccent,
 
                 onPressed: () {
                   Navigator.push(
@@ -73,8 +73,8 @@ class _HomePageState extends State<Home> {
           ),
               FloatingActionButton.extended(
                 label: Text('Inicia Sesión'),
-                backgroundColor: Colors.greenAccent,
-                splashColor: Colors.white,
+                backgroundColor: Colors.green,
+                splashColor: Colors.greenAccent,
 
                 onPressed: () {
                   Navigator.push(

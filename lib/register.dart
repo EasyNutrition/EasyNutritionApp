@@ -71,17 +71,20 @@ class Register extends StatelessWidget {
               children: <Widget>[
                 FloatingActionButton.extended(
                   label: Text('Mujer'),
-                  backgroundColor: Colors.greenAccent,
-                  splashColor: Colors.white,
+                  backgroundColor: Colors.green,
+                  splashColor: Colors.greenAccent,
 
-                  onPressed: (
-
-                      ) {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PatientRegister()));
+                  },
                 ),
                 FloatingActionButton.extended(
                   label: Text('Hombre'),
-                  backgroundColor: Colors.greenAccent,
-                  splashColor: Colors.white,
+                  backgroundColor: Colors.green,
+                  splashColor: Colors.greenAccent,
 
                   onPressed: () {
                     Navigator.push(

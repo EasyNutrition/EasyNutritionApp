@@ -76,7 +76,7 @@ class _CreateAccountState extends State<CreateAccount> {
               ),
               FloatingActionButton.extended(
                 label: Text('Continuar con Correo'),
-                backgroundColor: Colors.greenAccent,
+                backgroundColor: Colors.green,
                 splashColor: Colors.lightGreenAccent,
                 icon: Icon( // <-- Icon
                   Icons.attach_email_rounded,
@@ -102,7 +102,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   TextSpan(
                     text: 'Términos y Condiciones',
                     style: TextStyle(
-                        color: Colors.greenAccent,
+                        color: Colors.green,
                         fontSize: 15.0,
                         fontFamily: 'Karla'
                     ),
@@ -118,7 +118,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   TextSpan(
                     text: 'Política de Privacidad',
                     style: TextStyle(
-                        color: Colors.greenAccent,
+                        color: Colors.green,
                         fontSize: 15.0,
                         fontFamily: 'Karla'
                     ),

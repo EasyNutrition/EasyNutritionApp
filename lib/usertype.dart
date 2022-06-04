@@ -58,8 +58,8 @@ class UserType extends StatelessWidget {
                     ),
                     FloatingActionButton.extended(
                       label: Text('Paciente'),
-                      backgroundColor: Colors.greenAccent,
-                      splashColor: Colors.white,
+                      backgroundColor: Colors.green,
+                      splashColor: Colors.greenAccent,
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -88,8 +88,8 @@ class UserType extends StatelessWidget {
                     ),
                     FloatingActionButton.extended(
                       label: Text('Nutricionista'),
-                      backgroundColor: Colors.greenAccent,
-                      splashColor: Colors.white,
+                      backgroundColor: Colors.green,
+                      splashColor: Colors.greenAccent,
                       onPressed: () {},
 
                     ),
