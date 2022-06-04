@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'home_page.dart';
+
 class CreateAccount extends StatefulWidget {
   @override
   _CreateAccountState createState() =>  _CreateAccountState();
@@ -43,7 +45,12 @@ class _CreateAccountState extends State<CreateAccount> {
                   Icons.account_circle_sharp,
                   size: 24.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePage()));
+                },
                         ),
               Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -56,7 +63,12 @@ class _CreateAccountState extends State<CreateAccount> {
                   Icons.account_circle_sharp,
                   size: 24.0,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePage()));
+                },
 
               ),
               Padding(

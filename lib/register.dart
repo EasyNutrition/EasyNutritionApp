@@ -1,3 +1,4 @@
+import 'package:easy_nutrition/patient_register.dart';
 import 'package:flutter/material.dart';
 class Register extends StatelessWidget {
 
@@ -82,9 +83,12 @@ class Register extends StatelessWidget {
                   backgroundColor: Colors.greenAccent,
                   splashColor: Colors.white,
 
-                  onPressed: (
-
-                      ) {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PatientRegister()));
+                  },
 
                 ),
               ],

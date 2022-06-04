@@ -1,4 +1,7 @@
+import 'package:easy_nutrition/usertype.dart';
 import 'package:flutter/material.dart';
+
+import 'login.dart';
 
 class Home   extends StatefulWidget {
   @override
@@ -47,9 +50,12 @@ class _HomePageState extends State<Home> {
                 backgroundColor: Colors.greenAccent,
                 splashColor: Colors.white,
 
-                onPressed: (
-
-                    ) {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => UserType()));
+                },
 
               ),
 
@@ -70,9 +76,12 @@ class _HomePageState extends State<Home> {
                 backgroundColor: Colors.greenAccent,
                 splashColor: Colors.white,
 
-                onPressed: (
-
-                    ) {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginPage()));
+                },
 
               ),
             ],

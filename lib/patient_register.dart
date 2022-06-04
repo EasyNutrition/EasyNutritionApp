@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'create_account.dart';
+
 class PatientRegister extends StatefulWidget {
 
 
@@ -72,7 +74,12 @@ class _PatientRegisterState extends State<PatientRegister> {
               label: Text('Siguiente'),
               backgroundColor: Colors.greenAccent,
               splashColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CreateAccount()));
+              },
 
             ),
 

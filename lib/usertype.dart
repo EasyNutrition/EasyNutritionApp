@@ -1,3 +1,4 @@
+import 'package:easy_nutrition/register.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +60,12 @@ class UserType extends StatelessWidget {
                       label: Text('Paciente'),
                       backgroundColor: Colors.greenAccent,
                       splashColor: Colors.white,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Register()));
+                      },
 
                     ),
                     Padding(
