@@ -3,13 +3,13 @@ import 'booking_step_one.dart';
 import 'customWidgets/navbarWidget.dart';
 import 'premium_info.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageN extends StatefulWidget {
+  const HomePageN({Key? key}) : super(key: key);
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePageN> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePageN> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       switch (_selectedIndex) {
         case 0:
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage()));
+              context, MaterialPageRoute(builder: (context) => HomePageN()));
           break;
         case 1:
           Navigator.push(context,
@@ -67,12 +67,12 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'No cuentas con un nutricionista asignado actualmente',
+                      'En esta sección podras ver las reservas de tus pacientes',
                       style: TextStyle(fontSize: 24),
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Reserva una cita para comenzar',
+                      'Selecciona ver reservaciones',
                       style:
                       TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                     )
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                         height: 50,
                         child: Center(
                           child: Text(
-                            'Quiero reservar una cita',
+                            'Ver reservaciones',
                             style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
@@ -117,12 +117,12 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Tip nutricional del día',
+                          'Empezando el mes',
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.w500),
                         ),
                         Text(
-                            'Puedes consultar con tu nutricionista para que evalué tu casa particularmente.',
+                            'Siempre con buen ánimo y fortaleza.',
                             style: TextStyle(fontSize: 16)),
                         SizedBox(height: 24),
                         ClipRRect(
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.only(
                                       left: 25, bottom: 5),
                                   child: const Text(
-                                    'Controla la porción de tus alimentos usando guías de medición como tus manos.',
+                                    'Estimado paciente cuida tus alimentos usando las guías de medición como tus manos.',
                                     style: TextStyle(
                                         fontSize: 16, color: Colors.white),
                                   ),

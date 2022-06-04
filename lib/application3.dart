@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_nutrition/usern.dart';
 
 class ApplicationPage3 extends StatelessWidget {
   @override
@@ -90,30 +91,19 @@ class ApplicationPage3 extends StatelessWidget {
                 ),
               ),
 
-              Column(
-                children: <Widget>[
-                  SizedBox(height:20),
-                  MaterialButton(
-                    minWidth: double.infinity,
-                    height: 60,
-                    onPressed: (){
+          FloatingActionButton.extended(
+            label: Text('Usar la aplicación'),
+            backgroundColor: Colors.green,
+            splashColor: Colors.greenAccent,
 
-                    },
-                    color: Color(0xff47FF86),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Text(
-                      "Comienza a usar la aplicación",
-                      style: TextStyle(
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18
-                      ),
-                    ),
-                  ),
-                ],
-              )
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePageN()));
+            },
+
+          ),
             ],
           ),
         ),
