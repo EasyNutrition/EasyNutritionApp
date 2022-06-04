@@ -1,5 +1,4 @@
 import 'package:easy_nutrition/home_page.dart';
-import 'package:easy_nutrition/signup3.dart';
 import 'package:easy_nutrition/signup4.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,14 +6,14 @@ import 'package:intl/intl.dart';
 
 
 
-class PatientRegister extends StatefulWidget {
+class PatientRegisterM extends StatefulWidget {
 
 
   @override
-  _PatientRegisterState createState() => _PatientRegisterState();
+  _PatientRegisterMState createState() => _PatientRegisterMState();
 }
 
-class _PatientRegisterState extends State<PatientRegister> {
+class _PatientRegisterMState extends State<PatientRegisterM> {
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +55,9 @@ class _PatientRegisterState extends State<PatientRegister> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    //
                     children: <Widget>[
-                      // the login button
                       MaterialButton(
-                        color: Color(0xff47FF86),
                         minWidth: 130,
                         height: 50,
 
@@ -84,9 +82,11 @@ class _PatientRegisterState extends State<PatientRegister> {
                       SizedBox(width: 20),
 
                       MaterialButton(
+                        color: Color(0xff47FF86),
                         minWidth: 130,
                         height: 50,
                         onPressed: (){
+
                         },
 
                         shape: RoundedRectangleBorder(
@@ -103,11 +103,9 @@ class _PatientRegisterState extends State<PatientRegister> {
                               fontSize: 20
                           ),
                         ),
-                      )
-
+                      ),
                     ],
                   ),
-
                 ],
 
               ),

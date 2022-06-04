@@ -94,45 +94,119 @@ class _LoginPageState extends State<LoginPage> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                           ),
+                          Column(
+                            children: <Widget>[
+                              MaterialButton(
+                                  minWidth: double.infinity,
+                                  height: 60,
+                                  onPressed: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
 
-                          FloatingActionButton.extended(
-                            label: Text('Continuar con Google'),
-                            backgroundColor: Colors.white,
-                            splashColor: Colors.redAccent,
-                            icon: Icon( // <-- Icon
-                              Icons.account_circle_sharp,
-                              color: Colors.redAccent,
-                              size: 24.0,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => HomePage()));
+                                  },
+                                  color: Colors.white,
 
-                            },
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Image(
+                                        image: AssetImage("lib/assets/google.png"),
+                                        width: 30,
+                                        height: 30,
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(
+                                        "Continuar con Google",
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                              ),
 
-                          ),
+                              SizedBox(
+                                height: 20,
+                              ),
 
+                              MaterialButton(
+                                minWidth: double.infinity,
+                                height: 60,
+                                onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
 
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                          ),
-                          FloatingActionButton.extended(
-                            label: Text('Continuar con Facebook'),
-                            backgroundColor: Colors.blueAccent,
-                            splashColor: Colors.lightBlueAccent,
-                            icon: Icon( // <-- Icon
-                              Icons.account_circle_sharp,
-                              size: 24.0,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => HomePage()));
-                            },
+                                },
+                                color: Color(0xff3B5998),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50)
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Image(
+                                      image: AssetImage("lib/assets/facebook.png"),
+                                      width: 30,
+                                      height: 30,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      "Continuar con Facebook",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
 
+                              SizedBox(
+                                height: 20,
+                              ),
+
+                              MaterialButton(
+                                minWidth: double.infinity,
+                                height: 60,
+                                onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                                },
+                                color: Color(0xff47FF86),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50)
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Image(
+                                      image: AssetImage("lib/assets/correo.png"),
+                                      width: 30,
+                                      height: 30,
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      "Continuar con Correo",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
 
 

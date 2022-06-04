@@ -6,7 +6,7 @@ import 'package:easy_nutrition/register.dart';
 import 'package:easy_nutrition/usertype.dart';
 import 'package:flutter/material.dart';
 
-import 'create_account.dart';
+
 void main() {
   runApp(const MyApp());
 }
