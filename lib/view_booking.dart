@@ -107,7 +107,7 @@ class _ViewBooking extends State<ViewBooking> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Tu asesor ideal",
+                    Text("Tu asesor",
                         style: TextStyle(
                             fontSize: 21, fontWeight: FontWeight.w400)),
                     SizedBox(height: 16),

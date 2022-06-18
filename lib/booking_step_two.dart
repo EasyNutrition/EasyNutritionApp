@@ -1,6 +1,10 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:easy_nutrition/models/sessions-model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
 import 'booking_step_one.dart';
 import 'customWidgets/navbarBackWidget.dart';
 import 'home_page.dart';
@@ -214,6 +218,7 @@ class _BookingStepTwo extends State<BookingStepTwo> {
                                 borderRadius: new BorderRadius.circular(12)),
                           ),
                           onPressed: () {
+                            createSession(widget.startTime, widget.endTime, 'https://meet.google.com/ola', 12);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -241,5 +246,29 @@ class _BookingStepTwo extends State<BookingStepTwo> {
                 ]),
           ),
         ));
+  }
+}
+
+Future<Sessions> createSession(String startAt, String endAt, String link, int userId) async{
+
+  final response = await http.post(
+    Uri.parse("https://easyn.azurewebsites.net/api/sessions"),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(
+        {
+          'startAt': startAt,
+          'endAt': endAt,
+          'link': link,
+          'userId': userId,
+        }
+    ),
+  );
+  if(response.statusCode == 201){
+    print("Se registró la sesión");
+    return Sessions.fromJson(jsonDecode(response.body));
+  } else {
+    throw Exception();
   }
 }
