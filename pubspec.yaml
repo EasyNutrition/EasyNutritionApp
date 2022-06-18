@@ -38,7 +38,7 @@ dependencies:
   flutter_svg: ^0.17.4
   grouped_buttons: ^1.0.4
   intl: ^0.17.0
-
+  http:
 dev_dependencies:
   flutter_test:
     sdk: flutter

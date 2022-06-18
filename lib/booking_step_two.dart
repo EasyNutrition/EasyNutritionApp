@@ -7,7 +7,11 @@ import 'home_page.dart';
 import 'view_booking.dart';
 
 class BookingStepTwo extends StatefulWidget {
-  const BookingStepTwo({Key? key}) : super(key: key);
+  final String name;
+  final String date;
+  final String startTime;
+  final String endTime;
+  const BookingStepTwo({Key? key, required this.name, required this.date, required this.startTime, required this.endTime}) : super(key: key);
   @override
   State<BookingStepTwo> createState() => _BookingStepTwo();
 }
@@ -71,16 +75,16 @@ class _BookingStepTwo extends State<BookingStepTwo> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Nutrición para aumentar masa muscular",
+                                  Text(widget.name,
                                       style: TextStyle(fontSize: 18)),
                                   SizedBox(height: 8),
-                                  Text("15/05/2022",
+                                  Text(widget.date,
                                       style: TextStyle(fontSize: 18)),
                                   SizedBox(height: 8),
-                                  Text("04:00 PM",
+                                  Text(widget.startTime,
                                       style: TextStyle(fontSize: 18)),
                                   SizedBox(height: 8),
-                                  Text("05:00 PM",
+                                  Text(widget.endTime,
                                       style: TextStyle(fontSize: 18)),
                                 ],
                               ),
@@ -213,7 +217,11 @@ class _BookingStepTwo extends State<BookingStepTwo> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ViewBooking()));
+                                    builder: (context) => ViewBooking(
+                                        name: widget.name,
+                                        date: widget.date,
+                                        startTime: widget.startTime,
+                                        endTime: widget.endTime)));
                           },
                           child: Container(
                               height: 50,

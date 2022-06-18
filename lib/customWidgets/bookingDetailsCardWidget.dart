@@ -111,7 +111,7 @@ class BookingDetailsCard extends StatelessWidget {
 
   route() {
     if(active){
-      return ViewBooking();
+      return Container();
     }
     return ViewBookingList();
   }
