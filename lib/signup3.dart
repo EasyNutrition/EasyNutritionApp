@@ -1,4 +1,7 @@
+import 'package:easy_nutrition/politpriv.dart';
+import 'package:easy_nutrition/signup.dart';
 import 'package:easy_nutrition/signupopc.dart';
+import 'package:easy_nutrition/termycond.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -134,7 +137,7 @@ class SignupPage3 extends StatelessWidget {
                     minWidth: double.infinity,
                     height: 60,
                     onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SignupOpcPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SignupPage()));
                     },
                     color: Color(0xff47FF86),
                     shape: RoundedRectangleBorder(
@@ -180,23 +183,57 @@ class SignupPage3 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> Termycond()));
+                        },
+                        child: new Text("Términos y Condiciones",
+                          style: TextStyle(
+                          fontSize: 11,
+                          color: Color(0xff47FF86),
+                        ),
+                        ),
+                      ),
+
+                      /*
                       Text("Términos y Condiciones",
                         style: TextStyle(
                           fontSize: 12,
                           color: Color(0xff47FF86),
                         ),
                       ),
-                      Text(" y",
+
+                       */
+
+                      Text("y",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 9,
                         ),
                       ),
+
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> PoliticPriv()));
+                        },
+                        child: new Text("Políticas de Privacidad",
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xff47FF86),
+                          ),
+                        ),
+                      ),
+
+                      /*
                       Text(" Políticas de Privacidad",
                         style: TextStyle(
                           fontSize: 12,
                           color: Color(0xff47FF86),
                         ),
                       ),
+
+                       */
+
+
                     ],
                   ),
                 ],

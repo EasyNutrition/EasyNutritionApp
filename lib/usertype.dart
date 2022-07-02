@@ -1,5 +1,6 @@
 import 'package:easy_nutrition/register.dart';
 import 'package:easy_nutrition/signup.dart';
+import 'package:easy_nutrition/signup3.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +9,24 @@ class UserType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back,
+            size: 20,
+            color: Colors.black,),
+        ),
+      ),
       resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Container(
-                height: 750,
+                height: 650,
                 width: 800,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -22,23 +35,10 @@ class UserType extends StatelessWidget {
                       padding: EdgeInsets.only(top: 50),
                     ),
                     Text(
-                      '¿Qué tipo de usuario eres',
+                      'Tipo de usuario',
                       style: TextStyle(color: Colors.black,fontSize: 40.0, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
 
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 30),
-                    ),
-                    Text(
-                      'Elige tu tipo de usuario para',
-                      style: TextStyle(color: Colors.black,fontSize: 20.0),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      'comenzar a utilizar la aplicación',
-                      style: TextStyle(color: Colors.black,fontSize: 20.0),
-                      textAlign: TextAlign.center,
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 30),
@@ -70,7 +70,7 @@ class UserType extends StatelessWidget {
 
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 50),
+                      padding: EdgeInsets.only(top: 30),
                     ),
                     Container(
                       width: 150,
@@ -92,7 +92,7 @@ class UserType extends StatelessWidget {
                       backgroundColor: Colors.green,
                       splashColor: Colors.greenAccent,
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage3()));
                       },
 
                     ),

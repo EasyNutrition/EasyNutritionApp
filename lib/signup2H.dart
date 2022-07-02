@@ -1,8 +1,359 @@
+import 'package:easy_nutrition/signup2H.dart';
+import 'package:easy_nutrition/signup2M.dart';
 import 'package:easy_nutrition/signup3.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:easy_nutrition/signup_model.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
+
+import 'customWidgets/app_text_field.dart';
+import 'data_class.dart';
+import 'home_page.dart';
+
+class SignupPage2M extends StatelessWidget {
+  const SignupPage2M({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+    var nameController = TextEditingController();
+    var phoneController = TextEditingController();
+    var addressController = TextEditingController();
+    var birthdayController = TextEditingController();
+    var lastnameController = TextEditingController();
+    var linkedinController = TextEditingController();
+    var usernameController = TextEditingController();
+
+    var roleIdController = TextEditingController();
+
+
+    Future<void> _registration() async {
+      String name = nameController.text.trim();
+      String phone = phoneController.text.trim();
+      String email = emailController.text.trim();
+      String password = passwordController.text.trim();
+      String address = addressController.text.trim();
+      String birthday = birthdayController.text.trim();
+      String lastname = lastnameController.text.trim();
+      String linkedin = linkedinController.text.trim();
+      String username = usernameController.text.trim();
+      String roleId = roleIdController.text.trim();
+
+      SignUpBody signUpBody = SignUpBody(
+          name: name, phone: phone, email: email, password: password,
+          address: address, birthday: birthday, lastname: lastname, linkedin: linkedin,
+          username: username, roleId: int.parse(roleId));
+      var provider = Provider.of<DataClass>(context, listen: false);
+      await provider.postData(signUpBody);
+      print(provider.isBack);
+      if (provider.isBack) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>  HomePage()),
+        );
+      }
+    }
+
+    return Scaffold(
+      //backgroundColor: Colors.grey[300],
+        appBar: AppBar(
+
+          title: Text("Nutricionista",
+            style: TextStyle(
+              color: Colors.black87,
+            ),
+          ),
+
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back,
+              size: 20,
+              color: Colors.black,),
+          ),
+        ),
+        backgroundColor: Colors.white,
+        body: Consumer<DataClass>(builder: (context, data, child) {
+          return data.loading
+              ? Center(
+            child: Container(
+              child: SpinKitThreeBounce(
+                itemBuilder: (BuildContext context, int index) {
+                  return DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: index.isEven ? Colors.lightGreen : Colors.green,
+                    ),
+                  );
+                },
+              ),
+            ),
+          )
+              : SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(height: 50),
+                Column(
+                  children: <Widget>[
+                    Text("Sexo",
+                      style: TextStyle(
+                          fontSize: 24,
+                          color:Colors.black87),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        // the login button
+                        MaterialButton(
+                          color: Color(0xff47FF86),
+                          minWidth: 130,
+                          height: 50,
+
+                          onPressed: () {
+
+                          },
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                color: Color(0xff47FF86),
+                              ),
+                              borderRadius: BorderRadius.circular(50)
+                          ),
+                          child: Text(
+                            "Hombre",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(width: 20),
+
+                        MaterialButton(
+                          minWidth: 130,
+                          height: 50,
+                          onPressed: (){
+                          },
+
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                color: Color(0xff47FF86),
+                              ),
+                              borderRadius: BorderRadius.circular(50)
+                          ),
+                          child: Text(
+                            "Mujer",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+
+                SizedBox(
+                  height: 20,
+                ),
+                /*
+                //your name
+                AppTextField(
+                    textController: nameController,
+                    hintText: "Name",
+                    icon: Icons.person),
+                SizedBox(
+                  height: 20,
+                ),
+                //your phone
+                AppTextField(
+                    textController: lastnameController,
+                    hintText: "Lastname",
+                    icon: Icons.phone),
+
+
+                SizedBox(height: 20),
+                //your email
+                AppTextField(
+                    textController: emailController,
+                    hintText: "Email",
+                    icon: Icons.email),
+                const SizedBox(
+                  height: 20,
+                ),
+                //your password
+                AppTextField(
+                    textController: passwordController,
+                    hintText: "Password",
+                    icon: Icons.password_sharp,
+                    isObscure: true),
+
+                SizedBox(
+                  height: 20,
+                ),
+                */
+
+                //your phone
+                AppTextField(
+                    textController: phoneController,
+                    hintText: "Phone",
+                    icon: Icons.phone),
+                SizedBox(
+                  height: 20,
+                ),
+                AppTextField(
+                  textController: birthdayController,
+                  hintText: "Birthday",
+                  icon: Icons.phone),
+                SizedBox(
+                  height: 20,
+                ),
+
+
+
+                //your phone
+                AppTextField(
+                    textController: addressController,
+                    hintText: "Address",
+                    icon: Icons.phone),
+                SizedBox(
+                  height: 20,
+                ),
+
+                /*
+                //your phone
+
+                //your phone
+                AppTextField(
+                    textController: linkedinController,
+                    hintText: "Linkedin",
+                    icon: Icons.phone),
+                SizedBox(
+                  height: 20,
+                ),
+                //your phone
+                AppTextField(
+                    textController: usernameController,
+                    hintText: "Username",
+                    icon: Icons.phone),
+                SizedBox(
+                  height: 20,
+                ),
+
+                //your phone
+                AppTextField(
+                    textController: roleIdController,
+                    hintText: "id",
+                    icon: Icons.phone),
+                SizedBox(
+                  height: 20 + 20,
+                ),
+
+                */
+
+                Container(
+                  height: 60,
+                  alignment: Alignment.bottomCenter,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: CountryWidget(),
+                ),
+
+
+                MaterialButton(
+                  minWidth: double.infinity,
+                  height: 60,
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage3()));
+                  },
+                  color: Color(0xff47FF86),
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+
+                  child: Text(
+                    "Siguiente", style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                    color: Colors.black87,
+                  ),
+                  ),
+                ),
+
+
+
+                /*
+                //sign up button
+                GestureDetector(
+                  onTap: () {
+                    _registration();
+                  },
+                  child: Container(
+                    height: 70,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 23),
+                    margin: const EdgeInsets.only(left: 40, right: 40),
+                    child: const Text(
+                      "Sign up",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xFF74beef),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      //color: Colors.grey[300],
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(4, 4),
+                            blurRadius: 15,
+                            spreadRadius: 1,
+                          ),
+                          BoxShadow(
+                            color: Colors.white,
+                            offset: Offset(-4, -4),
+                            blurRadius: 15,
+                            spreadRadius: 1,
+                          ),
+                        ]),
+                  ),
+                ),
+
+                 */
+
+
+                SizedBox(
+                  height: 10,
+                ),
+                //tag line
+
+              ],
+            ),
+          );
+        }));
+  }
+}
+
+
+/*
 class SignupPage2M extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -182,7 +533,7 @@ class SignupPage2M extends StatelessWidget{
     );
   }
 }
-
+*/
 class CountryWidget extends StatefulWidget {
   @override
   State<CountryWidget> createState() => _CountryWidgetState();
@@ -220,7 +571,7 @@ class _CountryWidgetState extends State<CountryWidget> {
   }
 }
 
-
+/*
 class DateWidget extends StatefulWidget{
   @override
   State<DateWidget> createState() {
@@ -276,3 +627,5 @@ class _DateWidget extends State<DateWidget>{
     );
   }
 }
+
+ */

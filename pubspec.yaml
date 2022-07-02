@@ -39,6 +39,9 @@ dependencies:
   grouped_buttons: ^1.0.4
   intl: ^0.17.0
   http:
+  provider:
+  flutter_spinkit:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

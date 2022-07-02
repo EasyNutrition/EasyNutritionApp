@@ -54,7 +54,7 @@ class ApplicationPage2 extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 20,
                         color:Colors.grey[700]),),
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
 
                 ],
@@ -81,7 +81,7 @@ class ApplicationPage2 extends StatelessWidget {
 
                     ],
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
                   Row(
                     children: <Widget>[
@@ -94,7 +94,7 @@ class ApplicationPage2 extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
                   Row(
                     children: <Widget>[
@@ -106,7 +106,7 @@ class ApplicationPage2 extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
                   Row(
                     children: <Widget>[
@@ -119,7 +119,7 @@ class ApplicationPage2 extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
 
                   Text("Adjunta tu CV                                 ",
                     textAlign: TextAlign.left,
