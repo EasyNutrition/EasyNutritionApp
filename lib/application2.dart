@@ -1,3 +1,5 @@
+import 'package:easy_nutrition/politpriv.dart';
+import 'package:easy_nutrition/termycond.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -129,7 +131,7 @@ class ApplicationPage2 extends StatelessWidget {
                     ),
 
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                   Container(
                       width: 300,
@@ -166,7 +168,7 @@ class ApplicationPage2 extends StatelessWidget {
                           ),
                       ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
                 ],
               ),
@@ -175,7 +177,7 @@ class ApplicationPage2 extends StatelessWidget {
               Column(
                 children: <Widget>[
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
 
                   MaterialButton(
@@ -201,7 +203,7 @@ class ApplicationPage2 extends StatelessWidget {
 
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
 
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -216,26 +218,57 @@ class ApplicationPage2 extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> Termycond()));
+                        },
+                        child: new Text("Términos y Condiciones",
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xff47FF86),
+                          ),
+                        ),
+                      ),
+
+                      /*
                       Text("Términos y Condiciones",
                         style: TextStyle(
                           fontSize: 12,
                           color: Color(0xff47FF86),
                         ),
-                        //textAlign: TextAlign.center,
                       ),
-                      Text(" y",
+
+                       */
+
+                      Text("y",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 9,
                         ),
-                        //textAlign: TextAlign.center,
                       ),
+
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> PoliticPriv()));
+                        },
+                        child: new Text("Políticas de Privacidad",
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: Color(0xff47FF86),
+                          ),
+                        ),
+                      ),
+
+                      /*
                       Text(" Políticas de Privacidad",
                         style: TextStyle(
                           fontSize: 12,
                           color: Color(0xff47FF86),
                         ),
-                        //textAlign: TextAlign.center,
                       ),
+
+                       */
+
+
                     ],
                   ),
                 ],

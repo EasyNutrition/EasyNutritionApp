@@ -1,3 +1,5 @@
+import 'package:easy_nutrition/politpriv.dart';
+import 'package:easy_nutrition/termycond.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -104,21 +106,43 @@ class ApplicationPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text("Términos y Condiciones",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xff47FF86),
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> Termycond()));
+                            },
+                            child: new Text("Términos y Condiciones",
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Color(0xff47FF86),
+                              ),
                             ),
                           ),
-                          Text(" y",
+
+                          /*
+                      Text("Términos y Condiciones",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xff47FF86),
+                        ),
+                      ),
+
+                       */
+
+                          Text("y",
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 9,
                             ),
                           ),
-                          Text(" Políticas de Privacidad",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Color(0xff47FF86),
+
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> PoliticPriv()));
+                            },
+                            child: new Text("Políticas de Privacidad",
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Color(0xff47FF86),
+                              ),
                             ),
                           ),
                         ],
